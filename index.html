@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="navitems">
+          <img
+            class="navlogo"
+            src="./assets/logo/logo_white.svg"
+            alt="ShivraGreen"
+          />
+          <div class="hamburger" id="hamburger">
+            &#9776;
+            <!-- Hamburger Icon -->
+          </div>
+          <div class="links" id="links">
+            <a href="https://shivragreen.com/">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact us</a>
+            <a id="signin" href="#">Lets Go!</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main_window">
+        <div class="login_window">
+          <input id="name" type="text" placeholder="Name" required />
+          <br />
+          <input
+            id="mobile"
+            type="number"
+            placeholder="Phone Number"
+            required
+            oninput="limitDigits(this)"
+          />
+          <br />
+          <input
+            id="Units"
+            type="number"
+            placeholder="Units For Charging"
+            required
+          />
+          <br />
+          <p class="info">1 unit = &#8377; 10</p>
+          <p class="amount_text">
+            Payable Amount: &#8377; <span id="amount">0</span>
+          </p>
+          <p class="device_text">
+            Device ID: <span id="deviceID">123adfasdfsdf4rw3</span>
+          </p>
+
+          <div id="sendotp"><p>Send OTP</p></div>
+          <p class="otpconfirm">OTP SENT!</p>
+          <hr />
+          <div class="otp-container">
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+            <input type="text" class="otp-input" maxlength="1" />
+          </div>
+          <div id="submit"><p>Continue</p></div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <!-- Footer -->
+      <div class="footercontainer">
+        <div class="footer">
+          <p>&copy;&nbsp;ShivraGreen</p>
+          <div class="footerlinks">
+            <p>&nbsp;&nbsp;|&nbsp;</p>
+            <a href="https://www.instagram.com/shivragreen/">Instagram </a>
+            <a class="hide" href="#">LinkedIn </a>
+            <a class="hide" href="https://shivragreen.com/">Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCqVdj0DUA3DOektO39TkzroUFXpgXUfPc",
+        authDomain: "sivradb.firebaseapp.com",
+        projectId: "sivradb",
+        storageBucket: "sivradb.firebasestorage.app",
+        messagingSenderId: "477134893869",
+        appId: "1:477134893869:web:1f2c0860530e48f20099a4",
+        measurementId: "G-95KHY8WWV3",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <!-- Your custom script -->
+    <script src="./script_index.js"></script>
+  </body>
+</html>
